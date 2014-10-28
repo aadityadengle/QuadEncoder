@@ -1,0 +1,20 @@
+#######################################
+# Syntax Coloring Map For AccelStepper
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+QuadEncoder	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+ReadCount	KEYWORD2
+SetCount	KEYWORD2
+Reset	KEYWORD2
+Count	KEYWORD2
+#######################################
+# Constants (LITERAL1)
+#######################################
