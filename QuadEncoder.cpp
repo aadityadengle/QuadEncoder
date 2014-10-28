@@ -7,8 +7,8 @@ Copyright (c) 2014 Aaditya Dengle.
 #include "QuadEncoder.h"
 #include "digitalWriteFast/digitalWriteFast.h"//<digitalWriteFast/digitalWriteFast.h>
 #include <stdint.h>
-uint8_t _State;
-uint8_t _lState;
+int _State;
+int _lState;
 uint8_t _pinA;
 uint8_t _pinB;
 uint8_t _intA;
@@ -16,7 +16,7 @@ uint8_t _intB;
 long ReadCount();
 void SetCount(long NewCount);
 void Reset();
-long Count;
+long Count = 0;
 
 void CheckState();
 QuadEncoder::QuadEncoder(uint8_t pinA, uint8_t pinB)
@@ -73,6 +73,7 @@ QuadEncoder::QuadEncoder(uint8_t pinA, uint8_t pinB)
 
 void CheckState()
 {
+	_lState = _State;
 	_State = _State << digitalReadFast2(_pinA);
 	_State = _State << digitalReadFast2(_pinB);
 	
